@@ -1,0 +1,110 @@
+<!-- <p>user works!</p> -->
+<section class="header">
+    <nav>
+  
+        <a href="" routerLink="/dashboard">
+  
+            <div class="carousel-item active">
+                <!-- <img src="assets/images.png"
+                             
+                  height="150px" width="150px" style="border-radius: 50%;" alt="..."> -->
+              </div>
+  
+        </a>
+        <div class="nav-links" id="navLinks">
+  
+            <div class="d-flex">
+                <ul>
+                  <li><a href="" routerLink="/dashboard"><mat-icon>dashboard</mat-icon>DASHBOARD  </a></li>
+                  <li><a href="" routerLink="/owner"> ♛OWNER</a></li>
+                    <!-- <li><a href="" routerLink="/reservation">BOOKING DETAILS</a></li>
+                    <li><a href="" routerLink="/room">ROOM DETAILS</a></li>
+                    <li><a href="" routerLink="/department">DEPARTMENT</a></li>
+                    <li><a href="" routerLink="/inventory">INVENTORY</a></li>
+                    <li><a href="" routerLink="/staff">STAFF</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+  
+  <div class="container" style="text-align: center;">
+      <div classs="card">
+       
+       <h3 class="text-center" style="color: rgb(231, 238, 238);"><strong>LIST OF USERS</strong></h3>
+         <div class="card-body">
+           <table class="table table-stripped" style="background-color: lightcyan ;">
+             <thead> 
+                 <th>UserId</th>
+                 <th>Username</th>
+                 <th>Role</th>
+                 
+                 <th>Action</th>
+             </thead>
+               <tbody>
+                <tr *ngFor = "let data of users" style="color: #7272da;">  
+                      <td>{{data.userId}}</td>                            
+                      <td>{{data.username}}</td>
+                      <td>{{data.role}}</td>
+                    
+                       <td>
+          
+           <button class="btn btn-success" type="button" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" 
+                      (click)="onEditUser(data)"><mat-icon>edit</mat-icon></button>
+                      
+         &nbsp;
+                      <button class="btn btn-danger" type="button" type="button" (click)="deleteUser(data)"><mat-icon>delete</mat-icon></button>
+                 
+          </td> 
+            </tr>
+            </tbody>
+             </table>
+             </div>
+           </div>
+           <button class="btn btn-success" type="button" data-bs-toggle="modal"
+           data-bs-target="#exampleModal" style="text-align: center;"><mat-icon>add</mat-icon> User Details</button>
+      
+           <!-- <button (click) = "clickAddUser()" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <mat-icon>add</mat-icon>User </button>
+             -->
+       </div>
+     
+       <!-- Modal - 1-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <label class="form-label">USER DETAILS</label>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    
+
+                  <div class="mb-3">
+                    <label class="form-label">userId</label>
+                    <input type="text" formControlName="userId" class="form-control"  id="exampleInputEmail">
+                </div>
+             <div class="mb-3">
+                    <label class="form-label">username</label>
+                    <input type="text" formControlName="username" class="form-control"  id="exampleInputEmail">
+                </div>
+     
+                    <div class="mb-3">
+                        <label class="form-label">password</label>
+                        <input type="text" formControlName="password" class="form-control"  id="exampleInputEmail">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">role</label>
+                        <input type="text" formControlName="role" class="form-control"  id="exampleInputEmail">
+                    </div>
+                   
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               <button  type="button" (click)="updateUser()" class="btn btn-primary">Update User</button> 
+              <button  type="button" (click)="addUser()" class="btn btn-primary">Add User</button>
+            </div>
+          </div>
+        </div>
+     

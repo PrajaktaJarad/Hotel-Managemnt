@@ -1,0 +1,40 @@
+<!-- <p>header works!</p> -->
+<section> 
+    <mat-toolbar  class='navbar' color='primary'>
+      <div>𝓡€Ⓢ𝐎Řⓣ
+       
+       <mat-icon> local_hotel</mat-icon>
+    
+      </div> 
+    
+    
+      <div class="navigation" >
+        
+        
+        <a mat-raised-button  class=active><a href="#"><mat-icon>chalet</mat-icon>HOME</a></a>
+        &nbsp;
+        <a  mat-raised-button class="btn btn-warning" routerLink="/aboutus" > <mat-icon>info</mat-icon><strong> ABOUT US</strong></a>
+        &nbsp;
+     
+        <a  mat-raised-button class="btn btn-warning"  routerLink="/contactus"> <mat-icon>contact_support</mat-icon><strong>CONTACTS</strong></a> 
+        &nbsp;
+        <a mat-raised-button class="btn btn-warning" routerLink="/dashboard"><mat-icon>dashboard</mat-icon><strong>DASHBOARD</strong> </a>
+        &nbsp;
+        <a mat-raised-button class="btn btn-warning" routerLink="/login"><mat-icon>login</mat-icon><strong>LOGIN </strong></a>
+        &nbsp;
+        <!-- <a mat-raised-button class="btn btn-warning" routerLink="/dashboard"><mat-icon>logout</mat-icon><strong>LOGOUT</strong></a>
+      -->
+      &nbsp;
+
+        <span  *ngIf="loggedIn" style="color: #ffffff;">
+          Welcome {{username}}
+          &nbsp;&nbsp;
+          
+             <a mat-raised-button href="Javascript.void(0)"  (click)="onLogOut()" routerLink="/"><mat-icon>logout</mat-icon><strong>LOGOUT</strong></a>
+        </span>
+      
+     
+      </div>
+      
+    </mat-toolbar>
+    </section> 

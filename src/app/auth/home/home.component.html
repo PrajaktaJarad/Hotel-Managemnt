@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+              <ins> Login Form </ins>
+            </div>   
+         </div>
+         &nbsp;
+         <div class="form-container">
+         
+            <div class="form-inner">
+               <span *ngIf="errorMsg">{{errorMsg}}</span>
+               
+               <form action="#" class="login" (submit)="onFormSubmit()" [formGroup]="loginForm">
+                  &nbsp;
+                  <div class="field">
+                     <input type="text" placeholder="Username" name="username" required formControlName="username">
+                  </div>
+                  &nbsp;
+                  <div class="field">
+                     <input type="password" placeholder="Password" name="password" required formControlName="password">
+                  </div>
+                  &nbsp;
+               
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="LOGIN">
+                  </div>
+               
+               </form>
+
+            </div>
+         </div>
+      </div>
+      <script src="script.js">
+      </script>
+   </body>
+</html>
+
+
+<!-- Below is form -->
+ 
